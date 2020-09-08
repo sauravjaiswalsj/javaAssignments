@@ -118,7 +118,3 @@ book/.idea/misc.xml
 book/.idea/modules.xml
 book/.idea/vcs.xml
 book/a.out
-book/class.cpp
-book/src/Game/GuessGameLauncher.java
-book/src/GettersSetters/ElectricGuitar.java
-book/src/GettersSetters/Main.java
