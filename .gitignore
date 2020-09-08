@@ -112,21 +112,13 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-Udacity-FreeCourse-ProblemSet/FuctionalProgramming/Project 1 - TicTacToe/.gradle/
-Udacity-FreeCourse-ProblemSet/FuctionalProgramming/Project 1 - TicTacToe/build/resources/
-Udacity-FreeCourse-ProblemSet/FuctionalProgramming/Project 1 - TicTacToe/build/tmp/
-Udacity-FreeCourse-ProblemSet/Oops/
 book/.idea/.gitignore
 book/.idea/codeStyles/
 book/.idea/misc.xml
 book/.idea/modules.xml
 book/.idea/vcs.xml
-book/Game/GuessGameLauncher.java
-book/GettersSetters/ElectricGuitar.java
-book/GettersSetters/Main.java
 book/a.out
 book/class.cpp
-book/src/objects.java
 book/src/Game/GuessGameLauncher.java
 book/src/GettersSetters/ElectricGuitar.java
 book/src/GettersSetters/Main.java
