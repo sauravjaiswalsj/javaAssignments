@@ -17,7 +17,7 @@
 ### Java template
 # Compiled class file
 *.class
-
+*.out
 # Log file
 *.log
 
@@ -126,4 +126,7 @@ book/GettersSetters/ElectricGuitar.java
 book/GettersSetters/Main.java
 book/a.out
 book/class.cpp
-book/objects.java
+book/src/objects.java
+book/src/Game/GuessGameLauncher.java
+book/src/GettersSetters/ElectricGuitar.java
+book/src/GettersSetters/Main.java
