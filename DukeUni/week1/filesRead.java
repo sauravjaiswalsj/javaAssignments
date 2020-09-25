@@ -3,7 +3,7 @@ class ReadFile{
     public ReadFile(){
         try {
             File file = new File("file.txt");
-            BufferedReader br = new BufferedReader(new FileReader(file));
+            BufferedReader br = new BufferedReader(new java.io.FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
