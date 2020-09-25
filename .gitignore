@@ -50,6 +50,7 @@ hs_err_pid*
 .idea/**/dictionaries
 .idea/**/shelf
 *.iml
+/*.iml
 out/
 .idea/*
 .idea
