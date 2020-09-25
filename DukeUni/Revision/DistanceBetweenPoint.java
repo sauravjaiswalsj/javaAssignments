@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 public class DistanceBetweenPoint {
     private final int x;
     private final int y;
@@ -12,7 +14,7 @@ public class DistanceBetweenPoint {
         return this.y;
     }
     //compute Distance from one point to another point
-    public double distance(DistanceBetweenPoint otherPt){
+    public double distance(@NotNull DistanceBetweenPoint otherPt){
         int dx = x - otherPt.getX();
         int dy = y - otherPt.getY();
         return  Math.sqrt((dx*dx + dy*dy));
