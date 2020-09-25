@@ -1,15 +1,16 @@
 import java.io.*;
 
-public class FileReader {
-    public FileReader()throws IOException{
+public class FileRead{
+    public FileRead()throws IOException{
        final File file = new File("file.txt");
        final BufferedReader br = new BufferedReader(new java.io.FileReader(file));
        String line;
        while((line=br.readLine())!=null){
            System.out.println(line);
        }
+
     }
-    public static void main(String[] args){
-        FileReader fr = new FileReader();
+    public static void main(String[] args)throws IOException{
+        FileRead fr = new FileRead();
     }
 }
