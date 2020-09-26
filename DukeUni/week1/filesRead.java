@@ -15,7 +15,7 @@ class ReadFile{
     }
 }
 public class filesRead{
-    public static void main(String[] args) throws Exception{
-        ReadFile r=new ReadFile();
+    public static void main(String[] args) {
+        new ReadFile();
     }
 }
