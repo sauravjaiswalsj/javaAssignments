@@ -10,7 +10,7 @@ public class FileRead{
        }
 
     }
-    public static void main(String[] args)throws IOException{
-        FileRead fr = new FileRead();
+    public static void main(String[] args) throws IOException {
+        new FileRead();
     }
 }
