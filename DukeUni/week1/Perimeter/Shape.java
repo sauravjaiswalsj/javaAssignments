@@ -1,2 +1,4 @@
-package Perimeter;public class Shape {
+package Perimeter;
+
+public class Shape {
 }
