@@ -8,7 +8,7 @@ public class Shape {
     public void parseStringToNum() throws IOException {
         String line = new ReadFile().getReadFile();
        // System.out.println(line);
-        String[] parser = line.split("\\s|,| ");
+        String[] parser = line.split("\\s| |,");
         points = new ArrayList<>();
         for(int i=0;i<parser.length-1;i+=2){
             int x=Integer.parseInt(parser[i]);
@@ -25,4 +25,5 @@ public class Shape {
     public ArrayList<Coordinates> getPoints(){
         return points;
     }
+    public int getCountOfPoints(){return points.size();}
 }
