@@ -2,7 +2,7 @@
 import java.io.File;
 
 public class PerimeterAssignmentRunner {
-    public double getPerimeter (Shape s) {
+    public double getPerimeter (Shape +) {
         // Start with totalPerim = 0
         double totalPerim = 0.0;
         // Start wth prevPt = the last point 
