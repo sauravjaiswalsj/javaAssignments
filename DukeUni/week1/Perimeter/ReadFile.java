@@ -2,7 +2,7 @@ package Perimeter;
 import java.io.*;
 
 public class ReadFile{
-    public ReadFile() throws IOException {
+    public String getReadFile() throws IOException {
         StringBuilder sb = new StringBuilder(new BufferedReader(new InputStreamReader(System.in)).readLine());
         if(sb.indexOf(".txt")==-1){
             sb.append(".txt");
@@ -15,9 +15,10 @@ public class ReadFile{
             while ((line = br.readLine()) != null) {
                 sb.append(line).append(" ");
             }
-            System.out.println(sb.toString());
+            //System.out.println(sb.toString());
         }catch (Exception e){
             System.out.println("404! File Not Found");
         }
+        return sb.toString();
     }
 }
