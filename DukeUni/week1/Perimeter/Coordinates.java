@@ -14,4 +14,9 @@ public class Coordinates {
     public int getY(){
         return this.y;
     }
+    public double getDistance(Coordinates C){
+        int dx=C.getX();
+        int dy=C.getY();
+        return Math.sqrt((dx*dx + dy*dy));
+    }
 }
