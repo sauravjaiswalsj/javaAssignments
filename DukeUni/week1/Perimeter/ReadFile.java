@@ -3,9 +3,9 @@ import java.io.*;
 
 public class ReadFile{
     public String getReadFile() throws IOException {
-        StringBuilder sb = new StringBuilder(new BufferedReader(new InputStreamReader(System.in)).readLine());
-        if(sb.indexOf(".txt")==-1){
-            sb.append(".txt");
+       StringBuilder sb = new StringBuilder(new BufferedReader(new InputStreamReader(System.in)).readLine());
+       if(sb.indexOf(".txt")==-1){
+           sb.append(".txt");
         }
         try {
             final File file = new File(sb.toString());

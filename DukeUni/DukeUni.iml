@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Revision" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/perimeter" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="14" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
