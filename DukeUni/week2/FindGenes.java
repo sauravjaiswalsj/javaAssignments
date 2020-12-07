@@ -43,7 +43,7 @@ class fileReader{
 public class FindGenes{
     public static void main(String[] args){
         fileReader f=new fileReader();
-        if(f.getDNA()!="Your DNA is Missing"){
+        if(!f.getDNA().equals("Your DNA is Missing")){
             String dna=f.getDNA();
             GenesFinder g=new GenesFinder(dna);
         }
