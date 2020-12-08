@@ -1,2 +1,5 @@
-package Week2;public class FindingGene {
+package Week2;
+
+public class FindingGene {
+
 }
