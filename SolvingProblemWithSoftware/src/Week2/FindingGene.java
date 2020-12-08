@@ -7,6 +7,7 @@ class FindGene{
     public String getGene(String DNA){
        String startCodon = "ATG";
        String stopCodon = "TAA";
+       System.out.println(DNA.indexOf(startCodon)+" "+DNA.indexOf(stopCodon)+3);
        return DNA.substring(DNA.indexOf(startCodon),DNA.indexOf(stopCodon)+3);
     }
 }
@@ -22,13 +23,16 @@ public class FindingGene {
     public static String getDNA(){
         try {
             StringBuilder sb = new StringBuilder(new BufferedReader(new InputStreamReader(System.in)).readLine());
-            if(sb.indexOf(".txt")==-1){
-                sb.append(".txt");
+            if(sb.indexOf(".fa")==-1){
+                sb.append(".fa");
             }
-            File file = new File("./src/Week2/"+sb.toString());
+            File file = new File("./src/Week2/dna/"+sb.toString());
             final BufferedReader br = new BufferedReader( new FileReader(file));
             sb.delete(0,sb.length());
-            sb.append(br.readLine());
+            String line="";
+            while((line= br.readLine())!=null){
+                sb.append(line);
+            }
             return sb.toString();
         }
         catch (Exception e){
