@@ -5,16 +5,23 @@ import java.util.Locale;
 
 class FindGene{
     public String getGene(String DNA){
-       String startCodon = "ATG";
-       String stopCodon = "TAA";
-       System.out.println(DNA.indexOf(startCodon)+" "+DNA.indexOf(stopCodon)+3);
-       return DNA.substring(DNA.indexOf(startCodon),DNA.indexOf(stopCodon)+3);
+       int startCodon = DNA.indexOf("ATG");
+       int stopCodon = DNA.indexOf("TAA",startCodon+3);
+       // This index of looks from the start of the string and the The reason it failed the test case of Sam is we looked for taa from start instead we should have looked after the start codon
+        //System.out.println(DNA.indexOf(startCodon)+" "+DNA.indexOf(stopCodon)+3);
+        if((stopCodon-startCodon)%3 != 0){
+            return "No valid Gene Found";
+        }
+        if(startCodon != -1 && stopCodon!= -1)
+            return DNA.substring(startCodon,stopCodon+3);
+        return "No gene";
     }
 }
 
 public class FindingGene {
     public static void main(String[] args){
         String DNA = getDNA();
+        //testSimpleGene();
         if(!DNA.equals("File Not Found"))
             System.out.println(new FindGene().getGene(DNA.toUpperCase()));
         else
@@ -38,5 +45,17 @@ public class FindingGene {
         catch (Exception e){
             return "File Not Found";
         }
+    }
+    public static void testSimpleGene(){
+        String one ="AGCATCGGCGTAGAGCGTGTTTAGGAGTCGACACACAAATAAAGTTAAA";
+        String two ="ATGTCGCCAGAGAACTACTAGCAAAGGCTTAAAACTCAAAGGACTTGGCGG;";
+        String three = "ATGGATCCTCCATATACAACGGTATCTCCACCTCAGGTTTAGATCTCAACAACGGAACCATTGCCGACATGAGACAGTTAGGTATCGTCGAGAGTTACAAGCTAA";
+        String four = "TACCTACAAGCAGTCTAAAGGACGACTACTCATCTATGTGGCAAAATAGTAAACATTTACCCACCTATTAAAAGTATAGGAGATAGAAATTGAACTCAGGAGCTA";
+        String five = "TTAAACTCGTTAATACCCTTAAAATTAGCCATCTCCTAGACCTAATACTGGACTATTCTATTTTTTAATAGAAGAAATAATGTTAATATAAGTAACAAGAGTTAATGTAGCTTAAACCTTTAAAGCAAGGCACTGAAAATGCCTAGATGAGTGAGCTCACTCCATAGACACAAAGGTTTGGTCCTGGCCTTCTTATTAGT";
+        System.out.println(new FindGene().getGene(one));
+        System.out.println(new FindGene().getGene(two));
+        System.out.println(new FindGene().getGene(three));
+        System.out.println(new FindGene().getGene(four));
+        System.out.println(new FindGene().getGene(five));
     }
 }
