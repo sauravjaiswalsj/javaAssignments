@@ -1,25 +1,29 @@
 package Week2;
 class Occurrence{
-    public boolean towOccurrences(String a, String b){
+    public boolean towOccurrences(String checkPresentString, String string){
         //returns true if the occurrence occurs at least twice in b else false.
-        StringBuilder sb = new StringBuilder(b);
-        int count =0,index=0;
-        while(true){
-            index = sb.indexOf(a,index);
-            if(index != -1){
-                index+=sb.length();
+        int currIndex = 0,count=0,prevIndex=-1;
+        while(currIndex!=-1) {
+            currIndex=string.indexOf(checkPresentString,prevIndex+1);
+            if(currIndex>prevIndex) {
                 count++;
-            }else{
-                break;
             }
+            prevIndex=currIndex;
         }
-        if(count>2)
-            return true;
-        return false;
+//        while(currIndex!=-1){
+//            prevIndex=currIndex;
+//            if(currIndex==0)
+//                currIndex=-1;
+//            currIndex=string.indexOf(checkPresentString,currIndex+1);
+//            if(currIndex>prevIndex){
+//                count++;
+//            }
+        //}
+        return count >= 2;
     }
 }
 public class TwoOccurrence {
     public static void main(String[] args){
-        System.out.println(new Occurrence().towOccurrences("a","banana"));
+        System.out.println(new Occurrence().towOccurrences("a","aanana"));
     }
 }
