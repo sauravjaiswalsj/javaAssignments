@@ -18,7 +18,7 @@ class FindGene{
     }
     public String getGeneCorrect(String DNA){
         int startCodon = DNA.indexOf("ATG");
-        int stopCodon = DNA.indexOf("TAA",startCodon);
+        int stopCodon = DNA.indexOf("TAA",startCodon+3);
         int prevCodon=-1;
         while(stopCodon!=-1){
             prevCodon=stopCodon;
@@ -26,7 +26,7 @@ class FindGene{
                 stopCodon=DNA.indexOf("TAA",prevCodon+1);
             }
             else{
-                return DNA.substring(startCodon,stopCodon);
+                return DNA.substring(startCodon,stopCodon+3);
             }
         }
         return "No gene";
