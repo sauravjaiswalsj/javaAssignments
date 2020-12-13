@@ -16,12 +16,28 @@ class FindGene{
             return DNA.substring(startCodon,stopCodon+3);
         return "No gene";
     }
+    public String getGeneCorrect(String DNA){
+        int startCodon = DNA.indexOf("ATG");
+        int stopCodon = DNA.indexOf("TAA",startCodon);
+        int prevCodon=-1;
+        while(stopCodon!=-1){
+            prevCodon=stopCodon;
+            if((stopCodon-startCodon)%3!=0){
+                stopCodon=DNA.indexOf("TAA",prevCodon+1);
+            }
+            else{
+                return DNA.substring(startCodon,stopCodon);
+            }
+        }
+        return "No gene";
+    }
 }
 
 public class FindingGene {
     public static void main(String[] args){
         String DNA = getDNA();
         //testSimpleGene();
+        testNewGene();
         if(!DNA.equals("File Not Found"))
             System.out.println(new FindGene().getGene(DNA.toUpperCase()));
         else
@@ -57,5 +73,17 @@ public class FindingGene {
         System.out.println(new FindGene().getGene(three));
         System.out.println(new FindGene().getGene(four));
         System.out.println(new FindGene().getGene(five));
+    }
+    public static void testNewGene(){
+        String one ="AGCATCGGCGTAGAGCGTGTTTAGGAGTCGACACACAAATAAAGTTAAA";
+        String two ="ATGTCGCCAGAGAACTACTAGCAAAGGCTTAAAACTCAAAGGACTTGGCGG;";
+        String three = "ATGGATCCTCCATATACAACGGTATCTCCACCTCAGGTTTAGATCTCAACAACGGAACCATTGCCGACATGAGACAGTTAGGTATCGTCGAGAGTTACAAGCTAA";
+        String four = "TACCTACAAGCAGTCTAAAGGACGACTACTCATCTATGTGGCAAAATAGTAAACATTTACCCACCTATTAAAAGTATAGGAGATAGAAATTGAACTCAGGAGCTA";
+        String five = "TTAAACTCGTTAATACCCTTAAAATTAGCCATCTCCTAGACCTAATACTGGACTATTCTATTTTTTAATAGAAGAAATAATGTTAATATAAGTAACAAGAGTTAATGTAGCTTAAACCTTTAAAGCAAGGCACTGAAAATGCCTAGATGAGTGAGCTCACTCCATAGACACAAAGGTTTGGTCCTGGCCTTCTTATTAGT";
+        System.out.println(new FindGene().getGeneCorrect(one));
+        System.out.println(new FindGene().getGeneCorrect(two));
+        System.out.println(new FindGene().getGeneCorrect(three));
+        System.out.println(new FindGene().getGeneCorrect(four));
+        System.out.println(new FindGene().getGeneCorrect(five));
     }
 }
