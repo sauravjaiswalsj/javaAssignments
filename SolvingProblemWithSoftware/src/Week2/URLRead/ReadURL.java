@@ -3,6 +3,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
+
 public class ReadURL {
     public static void main(String[] args)throws IOException{
         final URL url = new URL("https://www.dukelearntoprogram.com//course2/data/manylinks.html");
@@ -16,5 +18,18 @@ public class ReadURL {
         }
         br.close();
         System.out.println(sb.toString());
+        new ReadYouTubeLinksFromURL(url);
+    }
+}
+class ReadYouTubeLinksFromURL{
+    public ReadYouTubeLinksFromURL(URL url)throws IOException{
+        final BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+        String Line;
+        ArrayList<String> links = new ArrayList<>();
+        while((Line=br.readLine())!=null){
+            if(Line.contains("youtube.com")){
+                System.out.println(Line);
+            }
+        }
     }
 }
