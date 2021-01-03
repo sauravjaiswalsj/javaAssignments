@@ -10,7 +10,7 @@ public class ReadURL {
         final URL url = new URL("https://www.dukelearntoprogram.com//course2/data/manylinks.html");
         //Open a url using java
         //java.awt.Desktop.getDesktop().browse(java.net.URI.create(String.valueOf(url)));
-        // open the stream and put it into the buf  
+        // open the stream and put it into the buffer
         final BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
         String line;
         StringBuilder sb = new StringBuilder();
