@@ -28,8 +28,14 @@ class ReadYouTubeLinksFromURL{
         ArrayList<String> links = new ArrayList<>();
         while((Line=br.readLine())!=null){
             if(Line.contains("youtube.com")){
-                System.out.println(Line);
+                int http= Line.indexOf("=\"");
+                int end=Line.indexOf("\">");
+                //System.out.println(Line);
+                links.add(Line.substring(http+2,end));
             }
+        }
+        for(String youtubeLink: links){
+            java.awt.Desktop.getDesktop().browse(java.net.URI.create(String.valueOf(youtubeLink)));
         }
     }
 }
